@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/21 16:43:06 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/25 15:40:35 by boyola           ###   ########.fr       */
+/*   Created: 2020/02/25 10:46:51 by boyola            #+#    #+#             */
+/*   Updated: 2020/02/25 15:20:37 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Locate a substring in a string
-*/
-char	*ft_strstr(const char *haystack, const char *needle)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned int i;
-	unsigned int j;
+	size_t i;
+	unsigned char *d;
+	const unsigned char *s;
 
 	i = 0;
-	if (!*needle)
-		return ((char*)haystack);
-	while (haystack[i])
+	d = (unsigned char *)dst;
+	s = (const unsigned char *)src;
+	len--;
+	if (s < d)
 	{
-		if (haystack[i] == needle[0])
+		while (len >= 0)
 		{
-			j = 1;
-			while (needle[j] != '\0' && haystack[i+j] == needle[j])
-				j++;
-			if (needle[j] == '\0')
-				return ((char*)haystack + i);
+			d[len] = s[len];
+			len--;
 		}
-		i++;
 	}
-	return (NULL);
+	else
+	{
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	return ((unsigned char*)dst);
 }
