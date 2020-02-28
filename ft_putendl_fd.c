@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 18:36:05 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 14:03:20 by boyola           ###   ########.fr       */
+/*   Created: 2020/02/26 15:35:56 by boyola            #+#    #+#             */
+/*   Updated: 2020/02/26 15:39:27 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Locate character in string.
-** Returns a pointer to the located character, or NULL if the character does not
-** appear in the string.
+** Outputs the string s to the file descriptor fd followed by a ’\n’.
 */
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	if (c == '\0')
-		return ((char *)s);
-	while (*s != c)
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (*s == '\0')
-			return (NULL);
-		s++;
+		write(fd, &s[i], 1);
+		i++;
 	}
-	return ((char*)s);
+	write(fd, "\n", 1);
 }

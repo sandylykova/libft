@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 18:36:05 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 14:03:20 by boyola           ###   ########.fr       */
+/*   Created: 2020/02/26 16:17:39 by boyola            #+#    #+#             */
+/*   Updated: 2020/02/26 16:53:46 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Locate character in string.
-** Returns a pointer to the located character, or NULL if the character does not
-** appear in the string.
+** Fill a string with a value.
 */
 
-char	*ft_strchr(const char *s, int c)
+unsigned char	*ft_strset(unsigned char *b, unsigned char c, size_t len)
 {
-	if (c == '\0')
-		return ((char *)s);
-	while (*s != c)
+	unsigned char *dup;
+
+	dup = (unsigned char*)b;
+	while (len > 0)
 	{
-		if (*s == '\0')
-			return (NULL);
-		s++;
+		*dup = c;
+		dup++;
+		len--;
 	}
-	return ((char*)s);
+	return (b);
 }

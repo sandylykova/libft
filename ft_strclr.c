@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 18:36:05 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 14:03:20 by boyola           ###   ########.fr       */
+/*   Created: 2020/02/26 16:11:59 by boyola            #+#    #+#             */
+/*   Updated: 2020/02/26 17:00:43 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Locate character in string.
-** Returns a pointer to the located character, or NULL if the character does not
-** appear in the string.
+** Sets every character of the string to the value ’\0’.
 */
 
-char	*ft_strchr(const char *s, int c)
+void	ft_strclr(char *s)
 {
-	if (c == '\0')
-		return ((char *)s);
-	while (*s != c)
-	{
-		if (*s == '\0')
-			return (NULL);
-		s++;
-	}
-	return ((char*)s);
+	ft_strset(s, '\0', ft_strlen(s));
 }

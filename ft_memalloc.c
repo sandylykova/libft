@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 18:36:05 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 14:03:20 by boyola           ###   ########.fr       */
+/*   Created: 2020/02/25 20:43:47 by boyola            #+#    #+#             */
+/*   Updated: 2020/02/25 21:12:29 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Locate character in string.
-** Returns a pointer to the located character, or NULL if the character does not
-** appear in the string.
+** Allocates (with malloc(3)) and returns a “fresh” memory
+** area. The memory allocated is initialized to 0.
+** If the allocation fails, the function returns NULL.
+** Returns the allocated memory area.
 */
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memalloc(size_t size)
 {
-	if (c == '\0')
-		return ((char *)s);
-	while (*s != c)
-	{
-		if (*s == '\0')
-			return (NULL);
-		s++;
-	}
-	return ((char*)s);
+	void	*new;
+
+	new = malloc(size);
+	if (new == NULL)
+		return (NULL);
+	ft_bzero(new, size);
+	return (new);
 }

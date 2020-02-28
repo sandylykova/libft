@@ -6,29 +6,29 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 19:31:43 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/23 20:34:29 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/27 13:16:57 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+
+/*
+** Save a copy of a string.
+** Function allocates sufficient memory for a copy of the string s1,
+** does the copy, and returns a pointer to it.
+*/
 
 char	*ft_strdup(const char *s1)
 {
-	int i;
-	int size;
-	char *dup;
+	int		i;
+	int		size;
+	char	*dup;
 
 	i = 0;
-	size = 0;
-	while (s1[size])
-		size++;
+	size = ft_strlen(s1);
 	dup = ((char *)malloc(sizeof(char) * (size + 1)));
-	while (s1[i])
-	{
-		dup[i] = s1[i];
-		i++;
-	}
-	dup[i] = '\0';
+	if (dup != NULL)
+		ft_strcpy(dup, s1);
+	free(dup);
 	return (dup);
 }

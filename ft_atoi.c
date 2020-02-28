@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: boyola <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 20:05:58 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/19 15:33:41 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/27 12:02:11 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Convert ASCII string to integer.
+*/
 
 int		ft_atoi(const char *str)
 {

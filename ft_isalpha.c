@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: boyola <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 18:55:42 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/19 19:01:17 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/25 21:05:39 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Alphabetic character test.
+*/
 
 int		ft_isalpha(int c)
 {

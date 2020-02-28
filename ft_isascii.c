@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: boyola <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 18:48:30 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/19 19:05:31 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/25 21:06:26 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Test for ASCII character.
+*/
 
 int		ft_isascii(int c)
 {

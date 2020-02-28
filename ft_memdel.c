@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 18:36:05 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 14:03:20 by boyola           ###   ########.fr       */
+/*   Created: 2020/02/25 20:54:18 by boyola            #+#    #+#             */
+/*   Updated: 2020/02/27 14:46:44 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Locate character in string.
-** Returns a pointer to the located character, or NULL if the character does not
-** appear in the string.
+** Takes as a parameter the address of a memory area that needs
+** to be freed with free(3), then puts the pointer to NULL.
 */
 
-char	*ft_strchr(const char *s, int c)
+void	ft_memdel(void **ap)
 {
-	if (c == '\0')
-		return ((char *)s);
-	while (*s != c)
+	if (ap && *ap)
 	{
-		if (*s == '\0')
-			return (NULL);
-		s++;
+		free(*ap);
+		*ap = NULL;
 	}
-	return ((char*)s);
 }

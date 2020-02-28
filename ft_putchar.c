@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
+/*   By: boyola <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 18:50:18 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/25 21:07:08 by boyola           ###   ########.fr       */
+/*   Created: 2020/02/26 14:14:48 by boyola            #+#    #+#             */
+/*   Updated: 2020/02/26 14:18:36 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Decimal-digit character test.
+** Outputs the character c to the standard output.
 */
 
-int		ft_isdigit(int c)
+void	ft_putchar(char c)
 {
-	return (c >= '0' && c <= '9');
+	write(1, &c, 1)
 }

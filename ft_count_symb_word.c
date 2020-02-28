@@ -1,44 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_count_symb_word.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 10:46:51 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 12:56:00 by boyola           ###   ########.fr       */
+/*   Created: 2020/02/27 19:48:57 by boyola            #+#    #+#             */
+/*   Updated: 2020/02/27 20:56:57 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 /*
-** Copy byte string. !!!If overlap then copy from end!!!
-** Returns the original value of dst.
+** Counts number of symbols and words except char c.
 */
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_count_symb_word(char *s, char c)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
-	unsigned char		*buffer;
+	int	i;
+	int	len;
 
 	i = 0;
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
-	if (s < d)
+	len = 0;
+	if (!s)
+		return (0);
+	while (s[i] != '\0')
 	{
-		while (--len >= 0)
-			d[len] = s[len];
-	}
-	else
-	{
-		while (i < len)
+		while (s[i] == c && s[i] != '\0')
+			i++;
+		while (s[i] != c && s[i] != '\0')
 		{
-			d[i] = s[i];
+			len++;
 			i++;
 		}
 	}
-	return (dst);
+	return (len);
+}
+
+int main(void)
+{
+	char *s;
+
+	s = ft_strdup("hel*******lo");
+
+	char c = '*';
+	printf("%i", ft_count_symb_word(s, c));
+	return (0);
 }

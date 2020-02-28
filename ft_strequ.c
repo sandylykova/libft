@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 18:36:05 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 14:03:20 by boyola           ###   ########.fr       */
+/*   Created: 2020/02/27 18:09:26 by boyola            #+#    #+#             */
+/*   Updated: 2020/02/27 18:34:31 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Locate character in string.
-** Returns a pointer to the located character, or NULL if the character does not
-** appear in the string.
+** Lexicographical comparison between s1 and s2. If the 2
+** strings are identical the function returns 1, or 0 otherwise.
 */
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	if (c == '\0')
-		return ((char *)s);
-	while (*s != c)
+	if (!s1 || !s2)
+		return (0);
+	while (s1 != '\0' && s2 != '\0' && *s1 == *s2)
 	{
-		if (*s == '\0')
-			return (NULL);
-		s++;
+		s1++;
+		s2++;
 	}
-	return ((char*)s);
+	return ((*s1 == *s2) ? 1 : 0);
 }

@@ -6,11 +6,15 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 19:03:28 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/23 17:36:08 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/25 21:07:40 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Printing character test (space character inclusive).
+*/
 
 int		ft_isprint(int c)
 {

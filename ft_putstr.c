@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
+/*   By: boyola <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 18:21:34 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 13:21:39 by boyola           ###   ########.fr       */
+/*   Created: 2020/02/26 14:19:30 by boyola            #+#    #+#             */
+/*   Updated: 2020/02/26 14:22:13 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Appends not more than n characters from s2, and then adds a terminating '\0'.
+** Outputs the string s to the standard output.
 */
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+void	ft_putstr(char const *s)
 {
-	size_t len;
-	size_t i;
+	int i;
 
-	len = ft_strlen(s1);
 	i = 0;
-	while (s2[i] && i < n)
+	while (s[i] != '\0')
 	{
-		s1[len] = s2[i];
-		len++;
+		write(1, &s[i], 1);
 		i++;
 	}
-	s1[len] = '\0';
-	return (s1);
 }

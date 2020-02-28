@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: boyola <boyola@student.42.us.org>          +#+  +:+       +#+        */
+/*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 19:12:26 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/21 13:15:24 by boyola           ###   ########.fr       */
+/*   Created: 2020/02/27 14:07:16 by boyola            #+#    #+#             */
+/*   Updated: 2020/02/27 14:12:02 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** Locate the last occurrence of c.
+*/
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int rev;
 
-	rev = 0;
-	while (s[rev] != '\0')
-		rev++;
-	while (s[rev] != c && rev >= 0)
+	rev = ft_strlen(s);
+	while (s[rev] != c && rev != 0)
 		rev--;
-	if (rev < 0)
-		return (NULL);
-	return ((char*)(s + rev));
+	if (s[rev] == c)
+		return ((char*)(&s[rev]));
+	return (NULL);
 }

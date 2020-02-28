@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: boyola <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 16:29:41 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/20 16:34:09 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/25 21:03:30 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Write zeroes to a byte string.
+*/
 
 void	ft_bzero(void *s, size_t n)
 {

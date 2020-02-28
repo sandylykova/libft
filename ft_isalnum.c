@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: boyola <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 18:52:33 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/19 19:01:50 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/25 21:04:45 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Alphanumeric character test.
+*/
 
 int		ft_isalnum(int c)
 {

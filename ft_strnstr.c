@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 19:18:41 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/25 20:42:21 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/27 14:31:19 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,24 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	needle_len;
-	char	*copy_haystack;
+	size_t	j;
+	size_t	i;
 
-	copy_haystack = (char *)haystack;
-	needle_len = ft_strlen(needle);
-	if (!needle_len)
-		return ((char*)copy_haystack);
-	while (*copy_haystack && len-- >= needle_len)
+	j = 0;
+	if (!*needle)
+		return ((char*)haystack);
+	while (haystack[j] != '\0' && j < len)
 	{
-		if (*copy_haystack == *needle)
-			if (ft_strncmp(needle, copy_haystack, needle_len) == 0)
-				return (copy_haystack);
-		copy_haystack++;
+		if (haystack[j] == needle[0])
+		{
+			i = 0;
+			while (needle[i] != '\0' && haystack[j + i] == needle[i] &&
+							(j + i) < len)
+				i++;
+			if (needle[i] == '\0')
+				return ((char*)&haystack[j]);
+		}
+		j++;
 	}
 	return (NULL);
 }
