@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 19:32:49 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 20:15:11 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/28 14:55:50 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,55 @@
 ** If the allocation fails the function returns NULL.
 */
 
+static	char	*ft_word_symb(const char *str, char c, int *i)
+{
+	char	*s;
+	int		k;
+	int		len;
+	int		j;
+
+	len = 0;
+	j = *i;
+	while (str[j] != c && str[j])
+	{
+		j++;
+		len++;
+	}
+	if (!(s = (char *)malloc(sizeof(s) * (len + 1))))
+		return (NULL);
+	k = 0;
+	while (str[*i] != c && str[*i])
+	{
+		s[k] = str[*i];
+		k++;
+		*i += 1;
+	}
+	s[k] = '\0';
+	while (str[*i] == c && str[*i])
+		*i += 1;
+	return (s);
+}
+
 char	**ft_strsplit(char const *s, char c)
 {
 	int	i;
 	int	j;
-	int len;
+	int words;
 	char **arr;
 
 	i = 0;
 	j = 0;
-	len = ft_count_symb_word(s, c);
-	*arr = (char **)(malloc(sizeof(char) * (len + 1)));
-	if (*arr == NULL)
+	words = ft_count_symb_word((char *)s, c);
+	arr = (char **)(malloc(sizeof(char *) * (words + 1)));
+	if (arr == NULL || !s || !c)
 		return (NULL);
-	while (s[i] != '\0')
+	while(s[i] == c && s[i] != '\0')
+		i++;
+	while (s[i] != c && s[i] != '\0' && j < words)
 	{
-		while(s[i] == c)
-			i++;
-		while (s[i] != c)
-		{
-			*arr[j] = s[i];
-			i++;
-		}
+		arr[j] = ft_word_symb(s, c, &i);
 		j++;
 	}
-	return (**arr);
+	arr[j] = NULL;
+	return (arr);
 }
