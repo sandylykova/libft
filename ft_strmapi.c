@@ -6,24 +6,26 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:58:37 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 18:08:42 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/28 18:59:41 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Applies the function f to each character of the string passed
+/*
+** Applies the function f to each character of the string passed
 ** as argument by giving its index as first argument to create a
-** “fresh” new string (with malloc(3)) resulting from the successive applications of f.
+** “fresh” new string (with malloc(3)) resulting from the successive
+** applications of f.
 */
 
-char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
 	char			*new;
 
 	i = 0;
-	new = (char *)(malloc(sizeof(char)*(ft_strlen(s) + 1)));
+	new = (char *)(malloc(sizeof(char) * (ft_strlen(s) + 1)));
 	if (new == NULL || s == NULL || f == NULL)
 		return (NULL);
 	if (s != NULL && f != NULL)
@@ -34,6 +36,6 @@ char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
 			i++;
 		}
 		new[i] = '\0';
-		return (new);
 	}
+	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 16:48:44 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 18:08:25 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/28 18:59:24 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 		{
 			new[i] = f(s[i]);
 			i++;
-
 		}
 		new[i] = '\0';
-		return (new);
 	}
+	return (new);
 }

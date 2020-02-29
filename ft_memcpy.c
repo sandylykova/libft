@@ -6,14 +6,14 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 16:33:17 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 12:12:00 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/28 12:44:13 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Copy memory area.
+** Copy n bytes from memory area src to memory area dst.
 */
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)

@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 16:17:39 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/26 16:53:46 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/28 18:52:58 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 ** Fill a string with a value.
 */
 
-unsigned char	*ft_strset(unsigned char *b, unsigned char c, size_t len)
+char	*ft_strset(char *b, char c, size_t len)
 {
-	unsigned char *dup;
+	char *dup;
 
-	dup = (unsigned char*)b;
+	dup = b;
 	while (len > 0)
 	{
 		*dup = c;

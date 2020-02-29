@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 15:53:14 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 20:52:38 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/28 19:10:11 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,21 +79,14 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
-unsigned int		ft_strcntfirstchar(char *str, const char *charset);
-unsigned int		ft_strcntlastchar(char *str, const char *charset);
 char				*ft_strtrim(char const *s);
-char				**ft_strsplitchrset(char *str, const char *charset);
-void				*ft_dup(void const *content, size_t content_size);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-void				ft_lstaddend(t_list **alst, t_list *new);
-int					ft_atoi_base(char *str, char *base);
-char				*ft_itoa_base(int value, char *base);
-unsigned char		*ft_strset(unsigned char *b, unsigned char c, size_t len);
+char				*ft_strset(char *b, char c, size_t len);
 int					ft_count_symb_word(char *s, char c);
 
 #endif

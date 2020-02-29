@@ -6,19 +6,20 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 19:32:49 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/28 14:55:50 by boyola           ###   ########.fr       */
+/*   Updated: 2020/02/28 18:37:41 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Allocates (with malloc(3)) and returns an array of “fresh” strings (all ending with ’\0’, including
-** the array itself) obtained by spliting s using the character c as a delimiter.
+** Allocates (with malloc(3)) and returns an array of “fresh” strings
+** (all ending with ’\0’, including the array itself) obtained by
+** spliting s using the character c as a delimiter.
 ** If the allocation fails the function returns NULL.
 */
 
-static	char	*ft_word_symb(const char *str, char c, int *i)
+static char		*ft_word_symb(const char *str, char c, int *i)
 {
 	char	*s;
 	int		k;
@@ -47,12 +48,12 @@ static	char	*ft_word_symb(const char *str, char c, int *i)
 	return (s);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	int	i;
-	int	j;
-	int words;
-	char **arr;
+	int		i;
+	int		j;
+	int		words;
+	char	**arr;
 
 	i = 0;
 	j = 0;
@@ -60,7 +61,7 @@ char	**ft_strsplit(char const *s, char c)
 	arr = (char **)(malloc(sizeof(char *) * (words + 1)));
 	if (arr == NULL || !s || !c)
 		return (NULL);
-	while(s[i] == c && s[i] != '\0')
+	while (s[i] == c && s[i] != '\0')
 		i++;
 	while (s[i] != c && s[i] != '\0' && j < words)
 	{
