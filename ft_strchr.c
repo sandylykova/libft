@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 18:36:05 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 14:03:20 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/05 18:26:06 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	char	*str;
+
+	str = (char *)s;
 	if (c == '\0')
 		return ((char *)s);
-	while (*s != c)
+	while (*str != c)
 	{
-		if (*s == '\0')
+		if (*str == '\0')
 			return (NULL);
-		s++;
+		str++;
 	}
-	return ((char*)s);
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 20:05:58 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 12:02:11 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/05 18:26:06 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int		ft_atoi(const char *str)
 	int sign;
 	int result;
 
+	sign = 1;
+	result = 0;
 	while (*str == ' ' || *str == '\t' || *str == '\n'
 			|| *str == '\r' || *str == '\v' || *str == '\f')
 		str++;

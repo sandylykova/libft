@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:42:09 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/28 18:49:53 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/05 18:26:06 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putnbr_fd(int n, int fd)
 
 	i = 0;
 	if (n == -2147483648)
-		ft_putstr("-2147483648");
+		ft_putstr_fd("-2147483648", fd);
 	else
 	{
 		if (n < 0)
@@ -32,7 +32,7 @@ void	ft_putnbr_fd(int n, int fd)
 		}
 		if (n >= 10)
 		{
-			ft_putnbr(n / 10);
+			ft_putnbr_fd(n / 10, fd);
 		}
 		i = (n % 10) + '0';
 		write(fd, &i, 1);

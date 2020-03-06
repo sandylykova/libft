@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 19:31:43 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 13:16:57 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/05 18:26:06 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	size = ft_strlen(s1);
-	dup = ((char *)malloc(sizeof(char) * (size + 1)));
+	dup = (char *)malloc(sizeof(char) * (size + 1));
 	if (dup != NULL)
 		ft_strcpy(dup, s1);
-	free(dup);
 	return (dup);
 }
