@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
-** Counts number of symbols and words except char c.
+** Counts number of words except char c.
 */
 
 int	ft_count_symb_word(char *s, char c)

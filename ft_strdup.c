@@ -29,6 +29,5 @@ char	*ft_strdup(const char *s1)
 	dup = ((char *)malloc(sizeof(char) * (size + 1)));
 	if (dup != NULL)
 		ft_strcpy(dup, s1);
-	free(dup);
 	return (dup);
 }

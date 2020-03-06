@@ -23,28 +23,31 @@
 
 char	*ft_strtrim(char const *s)
 {
-	int		i;
-	int		len;
-	int		j;
-	int		c;
+	int		tail;
+	int		head;
 	char	*copy;
+	int		temp;
 
-	i = 0;
 	if (!s)
 		return (NULL);
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-		i++;
-	j = i;
-	while (s[i] != '\0' && s[i] != ' ' && s[i] != '\n' && s[i] != '\t')
-		i++;
-	c = i;
-	len = i - j;
-	copy = (char *)(malloc(sizeof(char) * (len + 1)));
+	tail = ft_strlen(s);
+	tail = tail - 1;
+	while (s[tail] == ' ' || s[tail] == '\n' || s[tail] == '\t')
+		tail--;
+	head = 0;
+	temp = tail;
+	while (s[head] == ' ' || s[head] == '\n' || s[head] != '\t')
+	{
+		head++;
+		temp--;
+	}
+	if (temp <= 0)
+		temp = 0;
+	copy = (char *)(malloc(sizeof(char) * (temp + 1)));
 	if (copy == NULL)
 		return (NULL);
-	j = 0;
-	while (s[c] != '\0' && s[c] != ' ' && s[c] != '\n' && s[c] != '\t')
-		copy[j++] = s[c++];
-	copy[j] = '\0';
+	while (head <= tail)
+		copy[head] = *s++;
+	copy[head] = '\0';
 	return (copy);
 }
