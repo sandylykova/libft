@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 18:59:26 by boyola            #+#    #+#             */
-/*   Updated: 2020/03/05 18:39:21 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/06 15:39:34 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,27 @@
 
 char	*ft_strtrim(char const *s)
 {
+	char	*result;
 	int		tail;
 	int		head;
-	char	*copy;
-	int		temp;
 
-	tail = ft_strlen(s) - 1;
-	head = 0;
 	if (!s)
 		return (NULL);
-	while (s[tail] == ' ' || s[tail] == '\n' || s[tail] == '\t')
+	tail = ft_strlen(s);
+	while (s[tail - 1] == ' ' || s[tail - 1] == '\t' || s[tail - 1] == '\n')
 		tail--;
-	temp = tail;
-	while (s[head++] == ' ' || s[head++] == '\n' || s[head++] != '\t')
-		temp--;
-	if (temp <= 0)
-		temp = 0;
-	copy = (char *)(malloc(sizeof(char) * (temp + 1)));
-	if (!(copy = (char *)(malloc(sizeof(char) * (temp + 1)))))
+	head = -1;
+	while (s[++head] == ' ' || s[head] == '\t' || s[head] == '\n')
+		tail--;
+	if (tail <= 0)
+		tail = 0;
+	result = (char*)malloc(sizeof(char) * (tail + 1));
+	if (result == NULL)
 		return (NULL);
-	while (head <= tail)
-		copy[head] = *s++;
-	copy[head] = '\0';
-	return (copy);
+	s += head;
+	head = -1;
+	while (++head < tail)
+		result[head] = *s++;
+	result[head] = '\0';
+	return (result);
 }

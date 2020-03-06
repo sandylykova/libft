@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_get_max.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 18:36:05 by boyola            #+#    #+#             */
-/*   Updated: 2020/03/05 19:28:55 by boyola           ###   ########.fr       */
+/*   Created: 2020/03/06 09:44:32 by boyola            #+#    #+#             */
+/*   Updated: 2020/03/06 10:04:41 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Locate character in string.
-** Returns a pointer to the located character, or NULL if the character does not
-** appear in the string.
+** Returns bigger number.
 */
 
-char	*ft_strchr(const char *s, int c)
+float	ft_get_max(float a, float b)
 {
-	char	*str;
-
-	str = (char *)s;
-	while (*str != c && *str != '\0')
-		str++;
-	if (*str == '\0' && c != '\0')
-		return (NULL);
-	return (str);
+	if (a > b)
+		return (a);
+	return (b);
 }

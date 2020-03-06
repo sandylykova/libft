@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:58:37 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/28 18:59:41 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/06 10:23:38 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,17 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*new;
 
+	if (!s || !f)
+		return (NULL);
 	i = 0;
 	new = (char *)(malloc(sizeof(char) * (ft_strlen(s) + 1)));
-	if (new == NULL || s == NULL || f == NULL)
+	if (new == NULL)
 		return (NULL);
-	if (s != NULL && f != NULL)
+	while (s[i] != '\0')
 	{
-		while (s[i] != '\0')
-		{
-			new[i] = f(i, s[i]);
-			i++;
-		}
-		new[i] = '\0';
+		new[i] = f(i, s[i]);
+		i++;
 	}
+	new[i] = '\0';
 	return (new);
 }

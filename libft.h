@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 15:53:14 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/28 19:10:11 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/06 10:04:28 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,8 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				*ft_strset(char *b, char c, size_t len);
 int					ft_count_symb_word(char *s, char c);
+float				ft_get_max(float a, float b);
+float				ft_get_min(float a, float b);
+int					ft_list_size(t_list *begin_list);
 
 #endif

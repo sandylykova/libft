@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:55:15 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/27 14:51:58 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/05 19:22:15 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,12 @@
 char	*ft_strnew(size_t size)
 {
 	char	*str;
-	size_t	i;
 
-	i = 0;
 	str = (char *)malloc(sizeof(char) * size + 1);
 	if (!str)
 		return (NULL);
-	while (i < size)
-	{
-		str[i] = '\0';
-		i++;
-	}
+	str[size] = '\0';
+	while (size--)
+		str[size] = '\0';
 	return (str);
 }

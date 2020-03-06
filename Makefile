@@ -6,7 +6,7 @@
 #    By: boyola <boyola@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/20 14:30:16 by boyola            #+#    #+#              #
-#    Updated: 2020/02/28 19:19:47 by boyola           ###   ########.fr        #
+#    Updated: 2020/03/06 09:57:01 by boyola           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ ft_tolower.c ft_toupper.c ft_memmove.c ft_strstr.c ft_memchr.c ft_strlcat.c ft_m
 ft_putnbr.c ft_putchar.c ft_putstr.c ft_putendl.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_strnew.c ft_strdel.c ft_strclr.c \
 ft_strset.c ft_striter.c ft_striteri.c  ft_strmap.c ft_strmapi.c ft_strequ.c ft_strnequ.c  ft_strsub.c ft_strjoin.c \
 ft_strtrim.c ft_strsplit.c ft_count_symb_word.c ft_itoa.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
-ft_lstmap.c ft_memdel.c ft_putendl_fd.c
+ft_lstmap.c ft_memdel.c ft_putendl_fd.c ft_get_max.c ft_get_min.c ft_list_size.c
 
 OBJ = ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_memccpy.o ft_memcpy.o \
 ft_memset.o ft_strcat.o ft_strchr.o ft_strcmp.o ft_strcpy.o ft_strdup.o ft_strlen.o ft_strncat.o ft_strncmp.o ft_strncpy.o ft_strrchr.o \
@@ -27,7 +27,7 @@ ft_tolower.o ft_toupper.o ft_memmove.o ft_strstr.o ft_memchr.o ft_strlcat.o ft_m
 ft_putnbr.o ft_putchar.o ft_putstr.o ft_putendl.o ft_putchar_fd.o ft_putstr_fd.o ft_putnbr_fd.o ft_strnew.o ft_strdel.o ft_strclr.o \
 ft_strset.o ft_striter.o ft_striteri.o  ft_strmap.o ft_strmapi.o ft_strequ.o ft_strnequ.o  ft_strsub.o ft_strjoin.o \
 ft_strtrim.o ft_strsplit.o ft_count_symb_word.o ft_itoa.o ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o ft_lstiter.o \
-ft_lstmap.o ft_memdel.o ft_putendl_fd.o
+ft_lstmap.o ft_memdel.o ft_putendl_fd.o ft_get_max.o ft_get_min.o ft_list_size.o
 
 all: $(NAME)
 

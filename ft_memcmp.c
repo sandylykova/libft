@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 18:33:29 by boyola            #+#    #+#             */
-/*   Updated: 2020/03/05 18:26:06 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/05 19:33:32 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,19 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char	*ps1;
-	const unsigned char	*ps2;
+	unsigned char	*ps1;
+	unsigned char	*ps2;
+	size_t			i;
 
-	ps1 = (const unsigned char*)s1;
-	ps2 = (const unsigned char*)s2;
+	ps1 = (unsigned char*)s1;
+	ps2 = (unsigned char*)s2;
+	i = 0;
 	if (s1 == s2 || n == 0)
 		return (0);
-	while (n >= 0)
+	while (*ps1 == *ps2 && ++i < n)
 	{
-		if (*ps1 != *ps2)
-			return (*ps1 - *ps2);
-		if (n > 0)
-		{
-			ps1++;
-			ps2++;
-		}
+		ps1++;
+		ps2++;
 	}
-	return (0);
+	return ((int)(*ps1 - *ps2));
 }
