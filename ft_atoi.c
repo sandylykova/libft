@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 20:05:58 by boyola            #+#    #+#             */
-/*   Updated: 2020/03/05 18:26:06 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/06 15:47:39 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_atoi(const char *str)
 			sign = -1;
 		str++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*str && *str >= '0' && *str <= '9')
 	{
 		result = result * 10 + *str - '0';
 		str++;
