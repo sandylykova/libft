@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 18:59:26 by boyola            #+#    #+#             */
-/*   Updated: 2020/03/05 18:26:06 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/05 18:39:21 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,20 @@ char	*ft_strtrim(char const *s)
 	int		head;
 	char	*copy;
 	int		temp;
+
+	tail = ft_strlen(s) - 1;
+	head = 0;
 	if (!s)
 		return (NULL);
-	tail = ft_strlen(s);
-	tail = tail - 1;
 	while (s[tail] == ' ' || s[tail] == '\n' || s[tail] == '\t')
 		tail--;
-	head = 0;
 	temp = tail;
-	while (s[head] == ' ' || s[head] == '\n' || s[head] != '\t')
-	{
-		head++;
+	while (s[head++] == ' ' || s[head++] == '\n' || s[head++] != '\t')
 		temp--;
-	}
 	if (temp <= 0)
 		temp = 0;
 	copy = (char *)(malloc(sizeof(char) * (temp + 1)));
-	if (copy == NULL)
+	if (!(copy = (char *)(malloc(sizeof(char) * (temp + 1)))))
 		return (NULL);
 	while (head <= tail)
 		copy[head] = *s++;

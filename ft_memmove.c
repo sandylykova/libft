@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 10:46:51 by boyola            #+#    #+#             */
-/*   Updated: 2020/03/05 18:26:06 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/05 18:30:21 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	else
 	{
 		while (i < len)
-		{
-			d[i] = s[i];
-			i++;
-		}
+			d[i++] = s[i++];
 	}
 	return (dst);
 }
