@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
+/*   By: boyola <boyola@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 16:44:00 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/28 18:35:19 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/07 12:08:50 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Takes as a parameter the adress of a pointer to a link and
+** Takes as a parameter the address of a pointer to a link and
 ** frees the memory of this link and every successors of that link
 ** using the functions del and free(3). Finally the pointer to
 ** the link that was just freed must be set to NULL.
