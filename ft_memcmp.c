@@ -6,7 +6,7 @@
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 18:33:29 by boyola            #+#    #+#             */
-/*   Updated: 2020/03/06 15:47:45 by boyola           ###   ########.fr       */
+/*   Updated: 2020/03/06 20:27:37 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (0);
 	while (*ps1 == *ps2 && ++i < n)
 	{
-		if( *ps1 != *ps2)
+		if (*ps1 != *ps2)
 			return (*ps1 - *ps2);
 		if (n > 0)
 		{
