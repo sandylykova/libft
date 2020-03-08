@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/28 12:15:54 by boyola            #+#    #+#             */
-/*   Updated: 2020/03/06 22:24:36 by boyola           ###   ########.fr       */
+/*   Created: 2020/03/07 15:22:08 by boyola            #+#    #+#             */
+/*   Updated: 2020/03/07 15:22:12 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	else
 	{
-		if (!(new_list->content = malloc(content_size)))
+		if (!(new_list->content = (void *)malloc(sizeof(content_size))))
 		{
 			free(new_list);
 			return (NULL);
 		}
-		new_list->content = ft_memcpy(new_list->content, content, content_size);
+		ft_memcpy(new_list->content, content, content_size);
 		new_list->content_size = content_size;
 	}
 	new_list->next = NULL;

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/28 16:58:28 by boyola            #+#    #+#             */
-/*   Updated: 2020/03/06 15:27:21 by boyola           ###   ########.fr       */
+/*   Created: 2020/03/07 15:23:42 by boyola            #+#    #+#             */
+/*   Updated: 2020/03/07 15:23:44 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,16 @@
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list		*result;
-	t_list		*head;
-	t_list		*elem;
+	t_list *new_list;
 
 	if (!lst || !f)
 		return (NULL);
-	elem = f(lst);
-	if (!(result = ft_lstnew(elem->content, elem->content_size)))
-		return (NULL);
-	lst = lst->next;
-	head = result;
-	while (lst)
+	if (lst->next != NULL)
 	{
-		elem = f(lst);
-		if (!(result->next = ft_lstnew(elem->content, elem->content_size)))
-			return (NULL);
-		result = result->next;
-		lst = lst->next;
+		new_list = ft_lstmap(lst->next, f);
+		ft_lstadd(&new_list, f(lst));
 	}
-	return (head);
+	else
+		new_list = f(lst);
+	return (new_list);
 }

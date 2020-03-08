@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/27 20:31:41 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/28 19:02:35 by boyola           ###   ########.fr       */
+/*   Created: 2020/03/07 15:23:23 by boyola            #+#    #+#             */
+/*   Updated: 2020/03/07 15:23:27 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,29 +29,29 @@ static void	itoa_isnegative(int *n, int *negative)
 
 char		*ft_itoa(int n)
 {
-	int		tmp;
+	int		temp;
 	int		len;
 	int		negative;
-	char	*str;
+	char	*string;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	tmp = n;
+	temp = n;
 	len = 2;
 	negative = 0;
 	itoa_isnegative(&n, &negative);
-	while (tmp /= 10)
+	while (temp /= 10)
 		len++;
 	len += negative;
-	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
+	if ((string = (char*)malloc(sizeof(char) * len)) == NULL)
 		return (NULL);
-	str[--len] = '\0';
+	string[--len] = '\0';
 	while (len--)
 	{
-		str[len] = n % 10 + '0';
+		string[len] = n % 10 + '0';
 		n = n / 10;
 	}
 	if (negative)
-		str[0] = '-';
-	return (str);
+		string[0] = '-';
+	return (string);
 }

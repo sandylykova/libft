@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: boyola <boyola@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/28 16:53:43 by boyola            #+#    #+#             */
-/*   Updated: 2020/02/28 16:57:45 by boyola           ###   ########.fr       */
+/*   Created: 2020/03/07 15:23:34 by boyola            #+#    #+#             */
+/*   Updated: 2020/03/07 15:23:38 by boyola           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	t_list	*list_next;
 
+	if (!lst || !f)
+		return ;
 	while (lst)
 	{
 		list_next = lst->next;
